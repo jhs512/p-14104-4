@@ -1,6 +1,19 @@
 spring:
   application:
     name: back
+  profiles:
+    active: dev
+  output:
+    ansi:
+      enabled: always
+  datasource:
+    hikari:
+      auto-commit: false
   batch:
     job:
-      name: byeWorldJob
+      enabled: false
+logging:
+  level:
+    org.hibernate.orm.jdbc.bind: TRACE
+    org.hibernate.orm.jdbc.extract: TRACE
+    org.springframework.transaction.interceptor: TRACE

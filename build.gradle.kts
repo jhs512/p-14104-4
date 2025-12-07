@@ -25,10 +25,14 @@ repositories {
 }
 
 dependencies {
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-batch")
+    implementation("org.springframework.boot:spring-boot-starter-webmvc")
     compileOnly("org.projectlombok:lombok")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     annotationProcessor("org.projectlombok:lombok")
+    runtimeOnly("com.h2database:h2")
+    runtimeOnly("org.springframework.boot:spring-boot-h2console") // Spring Boot 4.0 부터는 h2-console 라이브러리를 직접 추가해야 합니다.
     testImplementation("org.springframework.boot:spring-boot-starter-batch-test")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
